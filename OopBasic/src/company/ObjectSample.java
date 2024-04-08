@@ -7,6 +7,9 @@ public class ObjectSample {
      // インスタンスの作成
         var department = new Department("営業部", "xx", 1000000);
         var employee = new Employee("鈴木", department, "課長", 100);
+        /*ここでDepartmentクラスとEmployeeクラスのフィールドを用いて、
+         * インスタンスを作成することで、２つのクラスを関連付けてそれぞれの
+         * メソッドを呼び出すことができるようになっている？*/
 
         // インスタンスメソッドの呼び出し
         employee.report();
