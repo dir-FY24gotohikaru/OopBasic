@@ -3,27 +3,29 @@ package company;
 public class library {
 
     public static void main(String[] args) {
-        String a = new String("Hello");
-        String b = new String("Hello");
-        String c = a;
+     // length()メソッド
+        String str = " Hello World! ";
+        System.out.println(str.length()); // 14
 
-        // == 演算子の使用
-        System.out.println(a == b); // false, a と b は異なるオブジェクトを参照
-        System.out.println(a == c); // true, a と c は同じオブジェクトを参照
+        // substring()メソッド
+        System.out.println(str.substring(1, 4)); // "Hel"
 
-        // equals()メソッドの使用
-        System.out.println(a.equals(b)); // true, a と b の内容（文字列）は同じ
-        
-        /*equals() と == は意味合いが異なるので注意が必要
-         * 「==演算子」は２つの変数が同じオブジェクトを参照しているかどうかを判断
-         * equals()は２つのオブジェクトの内容が等しいかどうか*/
+        // contains()メソッド
+        System.out.println(str.contains("llo")); // true
 
-        // toString()メソッド
-        Double d = 3.14;
-        System.out.println(d.toString());
+        // replace()メソッド
+        System.out.println(str.replace('l', 'L')); // " HeLLo WorLd! "
 
-        // hashCode()メソッド
-        System.out.println(d.hashCode());
+        // trim()メソッド
+        System.out.println(str.trim()); // "Hello World!"
+
+        // formatted()メソッド
+        String name = "Alice";
+        int age = 25;
+        double height = 1.7;
+
+        String formattedString = "Name: %s, Age: %d, Height: %.2f".formatted(name, age, height);
+        System.out.println(formattedString);
     }
 
 }
