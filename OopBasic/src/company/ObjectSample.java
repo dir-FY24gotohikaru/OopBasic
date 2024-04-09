@@ -5,16 +5,16 @@ public class ObjectSample {
 
     public static void main(String[] args) {
      // インスタンスの作成
-        var department = new Department("営業部", "xx", 1000000);
-        var employee = new Employee("鈴木", department, "課長", 100);
+        var salesDepartment = new Department("営業部", "xx", 1000000);
+        Employee sales = new Sales("鈴木", salesDepartment, "課長", 100);
         /*ここでDepartmentクラスとEmployeeクラスのフィールドを用いて、
          * インスタンスを作成することで、２つのクラスを関連付けてそれぞれの
          * メソッドを呼び出すことができるようになっている*/
 
         // インスタンスメソッドの呼び出し
-        employee.report();
-        employee.report(2);
-        employee.joinMeeting();
+        sales.report();
+        sales.report(2);
+        sales.joinMeeting();
         
         /*employee.report(); で、
          * 引数のない report() メソッドを呼び出す
@@ -52,10 +52,10 @@ public class ObjectSample {
         System.out.println("");
 
         // アルバイトインスタンスの作成
-        var parttimeWorker = new ParttimeWorker("太田", department);
+        var parttimeWorker = new ParttimeWorker("太田", salesDepartment);
         
         // 実装したメソッドの呼び出し
-        ((Workable) employee).work();
+        ((Workable) sales).work();
         ((Workable) engineer).work();
         ((Workable) projectManager).work();
         ((Workable) parttimeWorker).work();

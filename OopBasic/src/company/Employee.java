@@ -1,10 +1,10 @@
 package company;
 
-public class Employee implements Workable {
+public abstract class Employee implements Workable {
     // フィールド
     protected final String name;
-    private final Department department;
-    private final String position;
+    protected final Department department;
+    protected final String position;
     private final int employeeId;
     //フィールドはクラス定義 public class Employee { ... } の中に書きます。
 
@@ -33,10 +33,8 @@ public class Employee implements Workable {
     }
     
  // 会議に参加するメソッド
-    public void joinMeeting() {
-        department.meeting();
-        System.out.println("→上記の会議に参加します。部署：" + department.getName() + "名前：" + name);
-    }
+    public abstract void joinMeeting() ;
+    
  // 働くメソッドを実装
     @Override
     public void work() {
