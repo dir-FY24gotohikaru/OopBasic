@@ -9,7 +9,7 @@ public class ObjectSample {
         var employee = new Employee("鈴木", department, "課長", 100);
         /*ここでDepartmentクラスとEmployeeクラスのフィールドを用いて、
          * インスタンスを作成することで、２つのクラスを関連付けてそれぞれの
-         * メソッドを呼び出すことができるようになっている？*/
+         * メソッドを呼び出すことができるようになっている*/
 
         // インスタンスメソッドの呼び出し
         employee.report();
@@ -26,12 +26,25 @@ public class ObjectSample {
 
         // インスタンスの作成
         var devDepartment = new Department("開発部", "yy", 0);
-        var engineer = new Employee("田中", devDepartment, "一般社員", 88);
+        var engineer = new Engineer("田中", devDepartment, "一般社員", 88, "Java");
 
 
         // インスタンスメソッドの呼び出し
         engineer.report();
         engineer.joinMeeting();
+        engineer.developSoftware();
+        
+     // ----- 追記（ここから） -----
+        // ポリモーフィズムの確認
+        Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
+
+        // インスタンスメソッドの呼び出し
+        projectManager.report();
+        projectManager.joinMeeting();
+        if (projectManager instanceof Engineer) {
+            // developSoftwareメソッドを呼び出す
+            ((Engineer) projectManager).developSoftware();
+        }
 
     }
 
